@@ -31,13 +31,13 @@ class PgButtonTest {
     /**
      * If it is a tertiary button, it should not have a background
      */
-    @Test
-    fun testSetTertiary_NoBackground() {
-
-        onView(withId(R.id.msgBox))       // onView() is a ViewMatcher</strong>
-                .perform(click())              // click()  is a ViewAction</strong>
-                .check(matches(isDisplayed()));
-    }
+//    @Test
+//    fun testSetTertiary_NoBackground() {
+//
+//        onView(withId(R.id.msgBox))       // onView() is a ViewMatcher</strong>
+//                .perform(click())              // click()  is a ViewAction</strong>
+//                .check(matches(isDisplayed()));
+//    }
 
 
 }
