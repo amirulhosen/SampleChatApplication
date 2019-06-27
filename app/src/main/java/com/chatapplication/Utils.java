@@ -23,7 +23,7 @@ public class Utils {
     public static String emailStringChecker(String email) {
 
 
-        return null;
+        return email;
     }
 
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX =

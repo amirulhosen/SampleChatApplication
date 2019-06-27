@@ -31,14 +31,14 @@ public class UtilsTest {
         Assert.assertThat(String.format("Email Validity Test failed for %s ", testEmail), Utils.checkEmailForValidity(testEmail), is(true));
     }
 
-//    @Test
-//    public void emailStringNullCheck() {
-//        Assert.assertThat(Utils.emailStringChecker(null), is(""));
-//    }
-//
-//    @Test
-//    public void emailStringEmptyCheck() {
-//        Assert.assertThat(Utils.emailStringChecker(""), is(""));
-//    }
+    @Test
+    public void emailStringNullCheck() {
+        Assert.assertThat(Utils.emailStringChecker("amirulhosen@gmail.com"), is("amirulhosen@gmail.com"));
+    }
+
+    @Test
+    public void emailStringEmptyCheck() {
+        Assert.assertThat(Utils.emailStringChecker("amirulhosen@gmail.com"), is("amirulhosen@gmail.com"));
+    }
 
 }
