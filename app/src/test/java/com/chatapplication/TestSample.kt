@@ -1,13 +1,18 @@
 package com.chatapplication
 
+import android.content.Context
+import android.support.test.espresso.Espresso.onView
+import android.support.test.espresso.action.ViewActions.click
+import android.support.test.espresso.assertion.ViewAssertions.matches
+import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
+import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.test.core.app.ApplicationProvider
 import com.chatapplication.view.MainActivity
-import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.robolectric.Robolectric
 import org.robolectric.RobolectricTestRunner
 
 
@@ -19,11 +24,8 @@ class PgButtonTest {
     var btnAdd: ImageView? = null
 
     @Before
-    fun setup(){
-        activity = Robolectric.setupActivity(MainActivity::class.java)
-        firstNumber = activity?.findViewById(R.id.msgBox) as EditText
-        btnAdd = activity?.findViewById(R.id.sendBtn) as ImageView
-
+    fun setup() {
+        val context: Context = ApplicationProvider.getApplicationContext<MainActivity>()
     }
 
     /**
@@ -31,17 +33,10 @@ class PgButtonTest {
      */
     @Test
     fun testSetTertiary_NoBackground() {
-        //setup
 
-        firstNumber?.setText("12.2");
-
-        //test
-        btnAdd?.performClick();
-
-        //verify
-        assertEquals(25.5, firstNumber?.text.toString().toDouble(), 0.0);
-
-
+        onView(withId(R.id.msgBox))       // onView() is a ViewMatcher</strong>
+                .perform(click())              // click()  is a ViewAction</strong>
+                .check(matches(isDisplayed()));
     }
 
 
