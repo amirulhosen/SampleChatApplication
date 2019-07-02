@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean isValid = Utils.checkEmailForValidity(editText.getText().toString());
-
                 if (isValid) {
                     Toast.makeText(getApplicationContext(), "Email is valid", Toast.LENGTH_LONG).show();
                 } else {
